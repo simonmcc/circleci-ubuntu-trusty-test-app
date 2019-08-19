@@ -10,3 +10,5 @@ jobs:
         steps:
         - checkout
         - run: uname -a
+        - run: id
+        - run: ls /
