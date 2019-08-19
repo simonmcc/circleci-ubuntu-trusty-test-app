@@ -1,7 +1,7 @@
 version: 2
 jobs:
     build:
-        working_directory: ~/app
+        working_directory: /opt/demo
         parallelism: 1
         shell: /bin/bash --login
         docker:
@@ -12,3 +12,4 @@ jobs:
         - run: uname -a
         - run: id
         - run: ls /
+        - run: pwd
