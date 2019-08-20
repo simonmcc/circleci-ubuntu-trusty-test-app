@@ -21,4 +21,4 @@ jobs:
         - run: ls /
         - run: pwd
         - run: apt-get install -y mysql-client-5.6
-        - run: mysql -u user --p passw0rd -e "show databases"
+        - run: mysql -u user --password=passw0rd -e "show databases"
