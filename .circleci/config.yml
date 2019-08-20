@@ -7,9 +7,19 @@ jobs:
         docker:
         - image: simonmcc/circleci-ubuntu-trusty:latest
           command: /bin/cat
+        - image: circleci/mysql:5.6.45
+          environment:
+            MYSQL_ROOT_PASSWORD: rootpw
+            MYSQL_DATABASE: test_db
+            MYSQL_USER: user
+            MYSQL_PASSWORD: passw0rd
+
         steps:
         - checkout
         - run: uname -a
         - run: id
         - run: ls /
         - run: pwd
+        - run: apt-get install mysql-client-5.6
+        - run: mysql -u user -p passw0rd -e "show databases"
+
